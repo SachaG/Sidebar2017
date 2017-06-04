@@ -1,0 +1,39 @@
+$hmargin: 10px;
+$vmargin: 10px;
+
+$spacing: 20px;
+
+$header-height: 50px;
+$header-mobile-height: 50px;
+
+$small-thumbnail-width: 60px;
+$medium-thumbnail-width: 100px;
+
+@mixin activeHover{
+  &:hover{
+    background: $active-color;
+    color: $white;
+    border-color: $active-color;
+    text-decoration: none;
+  }
+}
+
+@mixin flex-center{
+  display: flex;
+  align-items: center;
+}
+
+@mixin border-radius{
+  border-radius: .25rem;
+}
+@mixin border{
+  border: 1px solid $border-color;
+}
+
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}

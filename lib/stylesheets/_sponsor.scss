@@ -1,0 +1,195 @@
+.sponsor-page .form-submit, .sponsor-footer{
+  a{
+    float: left;
+  }
+  button{
+    float: right;
+  }
+  overflow: hidden;
+  // @include flex-center;
+  // justify-content: space-between;
+  // flex-direction: row-reverse;
+}
+
+.sponsor-link-container{
+  display: flex;
+  justify-content: center;
+  margin: $spacing * 2 0;
+}
+.sponsor-link{
+  display: block;
+}
+
+//////////////////////////////////////////////////////
+// Sponsor                                          //
+//////////////////////////////////////////////////////
+
+.sponsor-page .markdown-contents{
+  blockquote{
+    background: $lightestgrey;
+    position: relative;
+    padding: $spacing;
+    p:last-child{
+      margin-bottom: 0;
+    }
+    &:after {
+      top: 100%;
+      left: 30px;
+      border: solid transparent;
+      content: " ";
+      height: 0;
+      width: 0;
+      position: absolute;
+      pointer-events: none;
+      border-color: rgba(247, 247, 247, 0);
+      border-top-color: #f7f7f7;
+      border-width: 10px;
+      margin-left: -10px;
+    }
+  }
+}
+
+//////////////////////////////////////////////////////
+// Drafts                                           //
+//////////////////////////////////////////////////////
+
+.sponsor-drafts{
+  border: 1px solid $lightergrey;
+  padding: $spacing;
+  margin-bottom: $spacing * 2;
+  h3{
+    margin-bottom: $spacing / 2;
+  }
+  ul{
+    margin: 0;
+    padding-left: $spacing;
+  }
+}
+
+.sponsor-drafts-date{
+  display: inline-block;
+  margin-left: $spacing / 2;
+}
+
+.sponsor-drafts-price{
+  background: $deepblue;
+  color: $white;
+  border-radius: 3px;
+  padding: 1px 5px;
+  display: inline-block;
+  margin-left: $spacing / 2;
+}
+
+//////////////////////////////////////////////////////
+// Progress                                         //
+//////////////////////////////////////////////////////
+
+.sponsor-progress{
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  margin-bottom: $spacing * 4;
+  &:after{
+    content: " ";
+    display: block;
+    position: absolute;
+    width: 100%;
+    top: 32px;
+    border-bottom: 5px solid $lightergrey;
+  }
+}
+
+.sponsor-progress-item{
+  text-align: center;
+  position: relative;
+  background: $white;
+  z-index: 10;
+}
+
+.sponsor-progress-number{
+  display: block;
+  @include font-bold;
+  font-size: $larger-font;
+  border: 5px solid $lightergrey;
+  border-radius: 100%;
+  padding: 5px;
+  .active &{
+    border-color: $active-color;
+  }
+  span{
+    border: 5px solid $lightergrey;
+    border-radius: 100%;
+    @include flex-center;
+    justify-content: center;
+    padding: 5px;
+    width: 50px;
+    height: 50px;
+    .active &{
+      border-color: $active-color;
+    }
+  }
+  em{
+    display: block;
+    line-height: 1;
+  }
+}
+
+.sponsor-progress-label{
+  position: absolute;
+  font-size: $medium-font;
+  width: 100%;
+  @include font-bold;
+  .active &{
+    color: $active-color;
+  }
+}
+
+//////////////////////////////////////////////////////
+// Preview                                          //
+//////////////////////////////////////////////////////
+
+.sponsor-preview{
+  position: relative;
+  border: 1px dashed $lightgrey;
+  padding: $spacing * 2;
+  margin-bottom: $spacing * 2;
+}
+
+.sponsor-preview-title{
+  position: absolute;
+  font-size: $smaller-font;
+  background: $lightergrey;
+  padding: 5px 7px;
+  top: 0px;
+  left: 0px;
+  text-transform: uppercase;
+}
+
+//////////////////////////////////////////////////////
+// Available Dates                                  //
+//////////////////////////////////////////////////////
+
+.sponsor-dates-available{
+  list-style-type: none;
+  padding: 0;
+  margin: 0 0 $spacing 0;
+  input{
+    display: inline-block;
+    margin-right: $spacing / 2;
+  }
+}
+
+//////////////////////////////////////////////////////
+// Complete Payment                                 //
+//////////////////////////////////////////////////////
+
+.sponsor-pay{
+  @include flex-center;
+  justify-content: center;
+  margin-bottom: $spacing * 2;
+}
+
+.sponsor-thanks-paid-at{
+  @include font-bold;
+  font-size: $small-font;
+}

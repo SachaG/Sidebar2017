@@ -1,0 +1,455 @@
+//////////////////////////////////////////////////////
+// Daily                                            //
+//////////////////////////////////////////////////////
+
+.posts-day{
+  margin-bottom: $spacing*3;
+  position: relative;
+  .posts-list-content{
+    margin: 0;
+  }
+  @include small{
+    margin-bottom: $spacing;
+  }
+}
+
+.posts-day-heading-wrapper{
+  @include medium-large{
+    position: absolute;
+    right: calc(100% + #{$spacing * 2});
+    top: 0;
+    bottom: 0;
+  }
+  @include small{
+    margin-bottom: -$spacing*1.5;
+    margin-top: $spacing;
+    overflow: hidden;
+  }
+}
+.posts-day-heading{
+  @include medium-large{
+    text-align: right;
+    position: sticky;
+    top: 0;
+    margin: 0;
+    // padding-bottom: $spacing*3;
+  }
+  @include small{
+    text-align: center;
+  }
+}
+
+.posts-day-heading-date{
+  display: block;
+  @include font-bold;
+  color: $lightertext;
+  white-space: nowrap;
+  position: relative;
+  @include medium-large{
+    font-size: 2.5rem;
+  }
+  @include small{
+    font-size: 2rem;
+  }
+}
+
+.posts-day-heading-day{
+  display: block;
+  @include font-bold;
+  color: $lightertext;
+  margin-top: -30px;
+  white-space: nowrap;
+  position: relative;
+  @include medium-large{
+    font-size: 6rem;
+  }
+  @include small{
+    font-size: 6rem;
+  }
+}
+
+.posts-day-heading-third{
+  display: block;
+  font-size: 3.5rem;
+  @include font-bold;
+  color: $lightertext;
+  margin-top: -20px;
+  white-space: nowrap;
+  position: relative;
+}
+
+.posts-day-heading-05-04{
+  .posts-day-heading-date{
+    left: -80px;
+  }
+}
+
+.posts-day-heading-03-08{
+  .posts-day-heading-date{
+    left: -30px;
+  }
+}
+//////////////////////////////////////////////////////
+// List                                             //
+//////////////////////////////////////////////////////
+
+.posts-load-more{
+  display: block;
+  text-align: center;
+  padding: $spacing;
+  // background: $orangered;
+  border: 5px solid $orangered;
+  color: $orangered;
+  @include font-bold;
+  font-size: $larger-font;
+  &:hover, &:focus, &:active{
+    border-color: $text;
+    color: $text;
+    text-decoration: none;
+  }
+}
+
+//////////////////////////////////////////////////////
+// Post Item                                        //
+//////////////////////////////////////////////////////
+
+.posts-item{
+  margin-bottom: $spacing*2;
+  position: relative;
+  &:last-child{
+    padding-bottom: 0;
+    border-bottom: 0;
+    margin-bottom: 0;
+  }
+  @include medium-large{
+    display: flex;
+  }
+}
+
+.posts-item-status, .jobs-item-status{
+  position: absolute;
+  top: 3px;
+  left: $spacing * -2 - 12px;
+  height: 24px;
+  width: 24px;
+  background: $green;
+  color: $white;
+  border-radius: 100%;
+  div{
+    height: 100%;
+    @include flex-center;
+    justify-content: center;
+  }
+  i{
+    display: block;
+    font-size: 70%;
+  }
+  &.status-candidate, &.status-unpaid{
+    background-color: $red;
+  }
+  &.status-sponsored, &.status-featured, &.status-paid{
+    background-color: $green;
+  }
+
+  &.status-archived, &.status-sponsored-pending{
+    background-color: $lightgrey;
+  }
+}
+
+.posts-item-status{
+  display: none; // only show on user page
+}
+
+.posts-item-content{
+  flex-grow: 1;
+}
+
+.posts-thumbnail{
+  display: block;
+  @include medium-large{
+    width: 160px;
+    margin-left: $spacing;
+    flex-shrink: 0;
+    order: 10;
+  }
+  @include small{
+    margin-bottom: $spacing;
+  }
+  img{
+    display: block;
+    width: 100%;
+    // border: 2px solid #dedede;
+    // -webkit-filter: grayscale(100%);
+  }
+  // display: none;
+}
+
+.posts-item-title{
+  font-size: $larger-font;
+  @include font-bold;
+  a{
+    color: $text;
+    &:hover{
+      color: $orangered;
+      text-decoration: underline;
+    }
+  }
+  @include small{
+    font-size: $large-font;
+  }
+}
+
+.posts-item-body{
+  font-size: $medium-font;
+  @include body-font;
+  font-weight: $light;
+  margin-bottom: $spacing/2;
+  @include small{
+    font-size: $small-font;
+  }
+}
+
+.posts-item-domain{
+  color: $lighttext;
+  font-style: italic;
+  white-space: nowrap;
+  font-size: $small-font;
+}
+
+.posts-item-footer{
+  @include flex-center;
+}
+
+.posts-actions{
+  @include flex-center;
+  margin-left: 6px;
+}
+
+.posts-item-meta{
+  @include flex-center;
+  // display: none;
+}
+
+.posts-item-user{
+  margin-right: 6px;
+}
+
+.posts-sponsored-marker{
+  position: relative;
+  top: -3px;
+  background: $light-yellow;
+  padding: 6px 10px;
+  display: inline-block;
+  margin-left: 5px;
+  font-size: $smallest-font;
+  text-transform: uppercase;
+  @include font-regular;
+  &:hover, &:focus{
+    background: $active-color;
+    color: $white;
+    text-decoration: none;
+  }
+}
+
+//////////////////////////////////////////////////////
+// Loading                                          //
+//////////////////////////////////////////////////////
+
+.posts-item-loading{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: $spacing * 2;
+}
+
+.posts-item-loading-thumbnail, .posts-item-loading-title,
+.posts-item-loading-description, .posts-item-loading-footer{
+  background: $lightestgrey;
+}
+
+.posts-item-loading-thumbnail{
+  height: 100px;
+  width: 160px;
+  margin-left: $spacing;
+  order: 2;
+}
+
+.posts-item-loading-content{
+  flex-grow: 1;
+  margin-bottom: $spacing;
+}
+
+.posts-item-loading-title{
+  height: 40px;
+  margin-bottom: $spacing;
+}
+
+.posts-item-loading-description{
+  height: 50px;
+  margin-bottom: $spacing;
+}
+
+.posts-item-loading-footer{
+  height: 20px;
+}
+
+//////////////////////////////////////////////////////
+// Like                                             //
+//////////////////////////////////////////////////////
+
+.like{
+  .like-button{
+    display: block;
+    color: $white;
+    &:hover{
+      color: $orangered;
+    }
+  }
+  .like-icon{
+    display: block;
+    path{
+      fill: $white;
+    }
+  }
+  .liked-icon{
+    display: none;
+    path{
+      fill: $pink;
+    }
+  }
+  a:hover{
+    text-decoration: none;
+    .icon{
+      color: $active-color;
+    }
+  }
+  &.voted {
+    .like-icon{
+      display: none;
+    }
+    .liked-icon{
+      display: block;
+    }
+  }
+}
+
+//////////////////////////////////////////////////////
+// Share                                            //
+//////////////////////////////////////////////////////
+
+.posts-item-share{
+  position: relative;
+  border: 1px solid $lightergrey;
+  border-radius: 3px;
+  padding: 2px 3px;
+  a{
+    display: block;
+    color: $lighttext;
+    line-height: 1;
+  }
+}
+
+.posts-item-share-icon{
+  path{
+    fill: $lightgrey;
+  }
+  display: block;
+  &:hover{
+    color: $orangered;
+  }
+}
+.posts-item-share-options{
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  z-index: 100;
+  top: -40px;
+  left: -52px;
+  padding: 5px;
+  background: black(0.75);
+  border-radius: 3px;
+  box-shadow: 0 3px 7px black(0.15);
+  @include flex-center;
+  justify-content: center;
+  transition: all 300ms ease-in-out;
+  a{
+    color: $white;
+    padding: 5px;
+    &:hover{
+      color: $orangered;
+    }
+  }
+  &:after {
+    top: 100%;
+    left: 50%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-color: black(0);
+    border-top-color: black(0.75);
+    border-width: 10px;
+    margin-left: -10px;
+  }
+  &.show{
+    opacity: 1;
+    pointer-events: auto;
+    top: -55px;
+  }
+}
+
+//////////////////////////////////////////////////////
+// Posts Edit Form                                  //
+//////////////////////////////////////////////////////
+
+.posts-edit-form-admin{
+  @include flex-center;
+  justify-content: space-between;
+}
+
+.posts-stats{
+  border: 1px solid $lightgrey;
+  @include border-radius;
+}
+
+.posts-stats-item{
+  display: inline-block;
+  border-right: 1px solid $lightgrey;
+  padding: 2px 4px;
+  color: $lighttext;
+  &:last-child{
+    border: 0;
+  }
+}
+
+//////////////////////////////////////////////////////
+// User Posts                                       //
+//////////////////////////////////////////////////////
+
+.posts-list-user-posts.posts-list-own-profile{
+  .posts-item-status{
+    display: block;
+  }
+}
+
+.posts-item-pay{
+  display: none;
+  margin-top: $spacing/2;
+  .posts-list-user-posts &{
+    display: block;
+  }
+}
+
+.posts-no-more{
+  text-align: center;
+}
+
+
+
+.posts-new-form-guidelines{
+  font-size: $medium-font;
+  padding: $spacing;
+  border: 5px solid $lightergrey;
+  background-color: $lightestgrey;
+}

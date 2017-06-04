@@ -1,0 +1,58 @@
+
+.posts-new-form-message{
+  text-align: center;
+  margin: 0;
+}
+
+.accounts-ui{
+  
+  padding: $spacing;
+  min-width: 240px;
+  .buttons{
+    .btn{
+      display: block;
+      width: 100%;
+      text-align: center;
+      margin-bottom: $spacing;
+      &:last-child{
+        margin-bottom: 0;
+      }
+    }
+  }
+  .buttons{
+    a{
+      display:block;
+      text-align: center;
+      margin-bottom: $spacing*2;
+    }
+  }
+  .password-or-service{
+    text-align: center;
+    margin-bottom: $spacing*2;
+  }
+  .social-buttons{
+    @include flex-center;
+    justify-content: space-between;
+    button{
+      margin-right: $spacing*2;
+      width: 100%;
+      &.btn-twitter{
+        background: #55acee;
+        border-color: #55acee;
+      }
+      &:last-child{
+        margin-right: 0;
+      }
+    }
+  }
+  .messages{
+    .message{
+      border: 1px solid $red;
+      border-radius: 3px;
+      padding: 10px;
+      margin: 10px 0;
+      text-align: center;
+      color: $red;
+    }
+  }
+}

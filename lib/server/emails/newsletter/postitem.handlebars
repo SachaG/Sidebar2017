@@ -1,0 +1,84 @@
+<!-- ARTICLE BLOCK -->
+<tr>
+  <td bgcolor="#ffffff" align="left" valign="top" style="border-top: 1px solid #eaeaea; padding: 20px 20px 20px 20px;">
+    <table width="100%">
+      <tr>
+        <!-- LEFT COLUMN -->
+        <td align="left" valign="top" style="max-width: 120px;">
+          {{#if thumbnailUrl}}
+          <!-- THUMBNAIL -->
+          <span class="thumbnail" style="overflow:hidden; float:left; display:none; line-height:0px;"><a href="{{postLink}}"><img alt="" src="{{thumbnailUrl}}" width="120" style="display: block; width: 120px; font-family: Helvetica, Arial, sans-serif; color: #000000; font-size: 16px;" border="0"></a></span>
+          {{else}}
+          <span class="thumbnail" style="overflow:hidden; float:left; display:none; line-height:0px;"><img alt="" src="http://placehold.it/800x600/ffffff/ffffff" width="120" style="display: block; width: 120px; font-family: Helvetica, Arial, sans-serif; color: #000000; font-size: 16px;" border="0"></span>
+          {{/if}}
+        </td>
+        <!-- CENTER COLUMN -->
+        <td align="left" valign="top" width="100%">
+          <table>
+            <tr>
+              <td bgcolor="#ffffff" align="left" valign="top" style="padding: 0px 20px 0px 20px;" class="pad">
+                <!-- TITLE -->
+                <h2><a href="{{postLink}}">{{title}}</a></h2>
+              </td>
+            </tr>
+            <tr>
+              <td bgcolor="#ffffff" align="left" valign="top" style="padding: 5px 20px 0px 20px;" class="pad">
+                <!-- DOMAIN -->
+                <a href="{{postLink}}" class="text-source">{{domain}}</a>
+              </td>
+            </tr>
+            <tr>
+              <td bgcolor="#ffffff" align="left" valign="top" style="padding: 10px 20px 0px 20px;" class="pad">
+                <!-- CATEGORIES -->
+                {{#if sponsored}}
+                  <a href="{{url}}" class="sponsored"><!--[if mso]>&nbsp;<![endif]-->Sponsored<!--[if mso]>&nbsp;<![endif]--></a>
+                {{/if}}
+                {{#if categories}}
+                  {{#each categories}}
+                    <a href="{{url}}" class="tag"><!--[if mso]>&nbsp;<![endif]-->{{name}}<!--[if mso]>&nbsp;<![endif]--></a>
+                  {{/each}}
+                {{/if}}
+              </td>
+            </tr>
+            <tr>
+              <td bgcolor="#ffffff" align="left" valign="top" style="padding: 10px 20px 0px 20px;" class="pad">
+                <!-- SUBMITTED BY -->
+                <table align="left" border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                    <td width="30">
+                      <img src="{{authorAvatarUrl}}" alt="" width="20" style="border-radius: 30px;">
+                    </td>
+                    <td>
+                      {{#if profileUrl}}
+                      <p class="text-primary">Submitted by <a href="{{profileUrl}}" class="link-primary" target="_blank">{{authorName}}</a></p>
+                      {{else}}
+                      <p class="text-primary">Submitted by {{authorName}}</p>
+                      {{/if}}
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+        </td>
+        <!-- RIGHT COLUMN -->
+        <td align="right" valign="center">
+          <table class="share">
+            <tr>
+              <td bgcolor="#ffffff" align="left" valign="top" style="padding: 0px 0px 0px 0px;" class="pad">
+                <a href="{{emailShareUrl}}" target="_blank"><img height="24" width="24" src="http://sidebar.io/img/email.png" alt="Share by email"/></a>
+              </td>
+              <td bgcolor="#ffffff" align="left" valign="top" style="padding: 0px 0px 0px 10px;" class="pad">
+                <a href="{{twitterShareUrl}}" target="_blank"><img height="24" width="24" src="http://sidebar.io/img/twitter.png" alt="Share on Twitter"/></a>
+              </td>
+              <td bgcolor="#ffffff" align="left" valign="top" style="padding: 0px 0px 0px 4px;" class="pad">
+                <a href="{{facebookShareUrl}}" target="_blank"><img height="24" width="24" src="http://sidebar.io/img/facebook.png" alt="Share on Facebook"/></a>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<!-- END ARTICLE BLOCK -->

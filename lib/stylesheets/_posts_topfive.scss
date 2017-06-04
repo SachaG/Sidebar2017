@@ -1,0 +1,238 @@
+//////////////////////////////////////////////////////
+// Post Top Five Hero Zone                          //
+//////////////////////////////////////////////////////
+
+.posts-top-five{
+  @include small{
+    padding: 0 $hmargin;
+  }
+  @include medium{
+    padding: 0 $hmargin*2;
+  }
+  @media screen and (min-width: $medium-break) and (max-width: 1299px) {
+    padding: 0 $hmargin*4;
+  }
+  @media screen and (min-width: 1300px) {
+    padding: 0 $hmargin*8;
+  }
+  margin: 0 auto;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  .posts-top-five-content, .posts-top-five-tagline{
+    margin-bottom: 0;
+  }
+  .posts-top-five-heading{
+    text-align: center;
+    @include small-medium{
+      display: none;
+    }
+  }
+  .posts-top-five-content{
+    @include small-medium{
+      display: none;
+    }
+    // max-width: 1200px;
+    // margin: 0 auto $vmargin*4 auto;
+  }
+  .posts-day-heading{
+    @include small{
+      font-size: $larger-font;
+    }
+    @include medium-large{
+      font-size: 2rem;
+    }
+    padding: 0;
+    margin-bottom: $vmargin;
+  }
+  .ordinal{
+    font-size: 1rem; //TODO
+    top: -10px;
+    left: -3px;
+  }
+  .posts-top-five-tagline{
+    font-size: $medium-font;
+    font-weight: $medium;
+  }
+  .posts-top-five-archives{ // not used
+    text-align: center;
+    a{
+      display: inline-block;
+      @include border;
+      @include activeHover;
+      @include border-radius;
+      padding: $vmargin $hmargin*2;
+      text-align: center;
+
+    }
+  }
+}
+
+//////////////////////////////////////////////////////
+// Post List (Top Five Variant)                     //
+//////////////////////////////////////////////////////
+
+.posts-list-top-five{
+  @include small-medium{
+    margin-bottom: $vmargin*2;
+  }
+  @include large{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .posts-item{
+    transition: 500ms ease-in-out;
+    position: relative;
+    opacity: 1;
+    background: white;
+    box-shadow: 0px 5px 15px black(0.1);
+    @include small-medium{
+      // flex-direction: row;
+      // align-items: center;
+      margin-bottom: $vmargin;
+      @include clearfix;
+    }
+    @include large{
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      margin-right: $hmargin*2;
+      max-width: 300px;
+      flex: 1;
+    }
+    &:last-child{
+      margin-right: 0;
+    }
+    &.posts-seen{
+      // opacity: 0.25;
+      transform: scale(0.85);
+      .posts-seen-checkmark{
+        opacity: 0.7;
+        transform: scale(1);
+      }
+    }
+    &.posts-sponsored{
+      @include small{
+        padding-top: $vmargin*2;
+      }
+    }
+  }
+  .posts-seen-checkmark{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    color: $orangered;
+    opacity: 0;
+    transform: scale(0);
+    transition: 300ms ease-in-out;
+    .icon{
+      margin-top: 20px;
+      display: block;
+      font-size: 7rem;
+    }
+  }
+  .posts-item-placeholder{
+    background: black(0.05);
+    border: none;
+    height: 400px;
+  }
+  .posts-thumbnail{
+    @include small{
+      float: right;
+      padding: $vmargin $hmargin;
+    }
+    @include medium{
+      float: left;
+      padding: $vmargin $hmargin;
+    }
+    img{
+      height: auto;
+      @include small{
+        width: $small-thumbnail-width;
+      }
+      @include medium{
+        width: $medium-thumbnail-width;
+      }
+      @include large{
+        width: 100%;
+      }
+    }
+
+  }
+  .posts-actions{
+    display: inline-block;    
+  }
+  .posts-item-header{
+    @include small{
+      padding: $vmargin $hmargin 0 $hmargin;
+      margin-right: $small-thumbnail-width;
+    }
+    @include medium{
+      padding: $vmargin $hmargin 0 $hmargin;
+      margin-left: $medium-thumbnail-width;
+    }
+    @include large{
+      padding: 0 $hmargin*2;
+      flex-grow: 1;
+    }
+  }
+  .posts-item-footer{
+    @include small{
+      padding: $vmargin $hmargin;
+      margin-right: $small-thumbnail-width;
+    }
+    @include medium{
+      padding: $vmargin $hmargin;
+      margin-left: $medium-thumbnail-width;
+    }
+    @include large{
+      width: 100%;
+      margin-top: $vmargin;
+      border-top: 1px solid $beige;
+      padding: 7px $hmargin;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+  .posts-item-user{
+    @include flex-center;
+    .users-avatar{
+      margin-right: 7px;
+    }
+    a{
+      display: block;
+      color: $lightgrey;
+      &:hover{
+        color: $active-color;
+      }
+    }
+  }
+  .posts-sponsored-marker{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    margin: 0;
+    @include small{
+      right: 0px;
+    }
+  }
+  .posts-category{
+    margin-bottom: 5px;
+  }
+}
+
+.posts-thumbnail-wrapper{
+  position: relative;
+  @include large{
+    margin-bottom: $vmargin*2;
+  }
+}
+

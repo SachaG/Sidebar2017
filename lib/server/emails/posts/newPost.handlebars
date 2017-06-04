@@ -1,0 +1,26 @@
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td bgcolor="#ffffff" align="center" valign="top" style="padding: 30px 20px 30px 20px;">
+
+        <span class="heading">
+        <a href="{{profileUrl}}">{{postAuthorName}}</a>
+        has created a new post:
+        {{#if url}}
+          <a href="{{linkUrl}}" class="action-link">{{postTitle}}</a>
+        {{else}}
+          {{postTitle}}
+        {{/if}}
+        </span><br><br>
+
+        {{#if htmlBody}}
+          <div class="post-body">
+          {{{htmlBody}}}
+          </div>
+          <br>
+        {{/if}}
+
+        <a href="{{postUrl}}">Discuss</a>
+        
+    </td>
+  </tr>
+</table>

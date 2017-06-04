@@ -1,0 +1,154 @@
+//////////////////////////////////////////////////////
+// Header                                           //
+//////////////////////////////////////////////////////
+
+.title{
+  font-size: 8rem;
+  @include font-bold;
+  color: $lightertext;
+  position: absolute;
+  top: -94px;
+  margin: 0;
+  @include small{
+    display: none;
+  }
+}
+
+.header-wrapper{
+  // position: absolute;
+  // top: $spacing;
+  // right: $spacing;
+  // margin-top: $spacing*4;
+  // margin-bottom: $spacing*2;
+  margin-bottom: $spacing*2;
+  @include small{
+    margin-bottom: 0;
+  }
+}
+
+.header{
+  @include flex-center;
+  @include small{
+    background: $orangered;
+  }
+}
+
+//////////////////////////////////////////////////////
+// Logo                                             //
+//////////////////////////////////////////////////////
+
+.logo{
+  @include flex-center;
+  // flex-direction: column;
+  // align-items: flex-end;
+}
+
+.logo-image{
+  background: $orangered;
+  height: 80px;
+  width: 80px;
+  margin: 0;
+  @include flex-center;
+  justify-content: center;
+  a, img{
+    // height: 80px;
+    // width: 80px;
+    height: 100%;
+    width: 100%;
+    display: block;
+  }
+  @include small{
+    height: 45px;
+    width: 45px;
+  }
+}
+
+.tagline{
+  width: 150px;
+  font-size: $medium-font;
+  line-height: 1.5;
+  // @include font-bold;
+  @include font-regular;
+  color: $lighttext;
+  margin: 0 0 0 $spacing/2;
+  @include small{
+    display: none;
+  }
+}
+
+
+//////////////////////////////////////////////////////
+// Nav                                              //
+//////////////////////////////////////////////////////
+
+.nav{
+  @include flex-center;
+  flex: 1;
+  justify-content: flex-end;
+  @include small{
+    padding-right: $spacing;
+  }
+}
+
+.nav-item{
+  margin-left: $spacing*2;
+  @include small{
+    margin-left: $spacing;
+  }
+}
+
+.nav-item-icon{
+  color: $text;
+  height: 24px;
+  width: 24px;
+  @include flex-center;
+  justify-content: center;
+  &:hover, &:active, &:focus{
+    text-decoration: none;
+  }
+  &:hover{
+    color: $active-color;
+  }
+  @include small{
+    &, &:hover{
+      color: $white;
+    }
+  }
+}
+
+.users-account-menu, .users-menu{
+  button.dropdown-toggle{
+    background: none;
+    padding: 0;
+    border: 0;
+    margin: 0;
+    &:after{
+      display: none;
+    }
+  }
+  span{
+    display: none;
+  }
+  .caret{
+    direction: none;
+  }
+  .avatar{
+    height: 24px !important;
+    width: 24px !important;
+  }
+}
+
+.nav-new-post{
+  button{
+    &, &:hover, &:focus, &:active{
+      background: none;
+      color: $text;
+      border: 0;
+      padding: 0;
+      margin: 0;
+    }
+  }
+  span{
+    display: none;
+  }
+}

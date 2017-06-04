@@ -1,0 +1,201 @@
+// $smaller-font: 0.8rem;
+// $small-font: 0.9rem;
+// $smallish-font: 1rem;
+// $medium-font: 1.15rem;
+// $large-font: 1.25rem;
+// $larger-font: 1.35rem;
+// $largest-font: 1.5rem;
+
+@mixin posts-list-background{
+  background: $white;
+  margin-bottom: $vmargin*4;
+  border: 1px solid $beige;
+  margin-bottom: $vmargin*2;
+}
+
+.posts-list-header{
+  display: none;
+}
+
+//////////////////////////////////////////////////////
+// Post Day                                         //
+//////////////////////////////////////////////////////
+
+.posts-day{
+  @include posts-list-background;
+  .posts-list{
+    margin: 0;
+    border: none;
+  }
+}
+
+.posts-day-heading{
+  padding: $vmargin*2 $hmargin/2;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 6px;
+  @include small{
+    font-size: $smallish-font;
+  }
+  @include medium-large{
+    font-size: $medium-font;
+  }
+  // font-weight: $light;
+  @include font-light;
+  .ordinal{
+    font-size: 0.6rem;
+    position: relative;
+    top: -6px;
+    display: inline-block;
+    letter-spacing: normal;
+    left: -3px;
+  }
+  .posts-day &{
+    border-bottom: 1px solid $beige;
+    margin-bottom: 0;
+  }
+}
+
+.posts-load-more{
+  display: block;
+  text-align: center;
+  font-size: $large-font;
+  padding: $vmargin*2 $hmargin;
+  @include activeHover;
+  width: 100%;
+  color: $active-color;
+  background: none;
+  border-top: 1px solid $beige;
+  &.posts-load-more-days{
+    @include border-radius;
+    @include border;
+    &:hover{
+      border: 1px solid $orangered;
+    }
+  }
+}
+
+//////////////////////////////////////////////////////
+// Post List                                        //
+//////////////////////////////////////////////////////
+
+.posts-list{
+  @include posts-list-background;
+  // nesting level 1
+  .posts-item{
+    border: none;
+    background: none;
+    border-bottom: 1px solid $beige;
+    @include small-medium{
+      @include clearfix;
+      padding: $vmargin $hmargin;
+    }
+    @include large{
+      @include flex-center;
+      padding: $vmargin*1.5 $hmargin*3;
+    }
+    &:last-child{
+      border-bottom: none;
+    }
+  }
+  .posts-featured-mark{
+    display: inline-block;
+    margin-left: 3px;
+    position: relative;
+    top: 2px;
+    .svg-icon{
+      path{
+        fill: #C2CBD0;
+      }
+    }
+  }
+  .posts-thumbnail{
+    @include small-medium{
+      float: right;
+      margin: 0 0 $hmargin $hmargin;
+    }
+    @include large{
+      flex-shrink: 0;
+      margin-right: $hmargin*1.5;
+    }
+    img{
+      display: block;
+      width: 70px;;
+    }
+  }
+  .posts-item-header{
+    flex-grow: 1;
+    @include small-medium{
+    }
+  }
+  .posts-item-footer{
+    @include small-medium{
+      margin-top: $vmargin/2;
+    }
+    @include large{
+      text-align: right;
+      max-width: 40%;
+      margin-left: $hmargin;
+    }
+  }
+  .posts-item-meta{
+    border: none;
+    justify-content: flex-start;
+  }
+  .posts-actions{
+  }
+  .posts-item-date{
+    margin-right: $hmargin;
+    color: $lighttext;
+  }
+  .posts-categories{
+    @include small-medium{
+      margin-bottom: -1 * $vmargin/2;
+    }
+  }
+  .posts-category{
+    @include small-medium{
+      margin-bottom: $vmargin/2;
+    }
+  }
+}
+
+.posts-item-categories-wrapper{
+  @include flex-center;
+}
+
+//////////////////////////////////////////////////////
+// Load More                                        //
+//////////////////////////////////////////////////////
+
+// .posts-load-more, .comments-load-more{
+//   display: block;
+//   text-align: center;
+//   // @include border-radius;
+//   font-size: $large-font;
+//   padding: $vmargin*2 $hmargin;
+//   @include activeHover;
+//   width: 100%;
+//   border-top: 1px solid $beige;
+//   // @include border;
+//   color: $active-color;
+//   background: none;
+// }
+
+.posts-load-more-loading{
+  border-top: 1px solid $beige;
+  padding: 31px 0;
+}
+
+.posts-no-more{
+  display: none;
+}
+
+
+.posts-no-results{
+  padding: $vmargin*2;
+  text-align: center;
+  &>div{
+    display: inline;
+  }
+}

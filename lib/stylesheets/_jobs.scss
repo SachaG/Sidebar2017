@@ -1,0 +1,131 @@
+//////////////////////////////////////////////////////
+// Banner                                           //
+//////////////////////////////////////////////////////
+
+.jobs-banner-wrapper{
+  position: relative;
+
+  @include medium-large{
+    margin-bottom: $spacing*3;
+    width: calc(100% + #{$spacing*6});
+    left: -$spacing*3;
+  }
+  @include small{
+    margin: $spacing;
+  }
+}
+
+.jobs-banner{
+  // background: $green;
+  border: 5px solid $lightgrey;
+  margin-bottom: $spacing;
+  @include medium-large{
+    padding: $spacing*2;
+  }
+  @include small{
+    padding: $spacing;
+  }
+  .jobs-item-status{
+    display: none;
+  }
+  .jobs-item{
+    margin: 0;
+  }
+  .jobs-item-body{
+    margin-bottom: $spacing;
+  }
+  .jobs-item-thumbnail{
+    img{
+      width: 140px;
+    }
+  }
+}
+
+.jobs-banner-title{
+  text-transform: uppercase;
+  font-size: $small-font;
+  margin-bottom: $spacing;
+  text-align: center;
+}
+
+.jobs-banner-post-link{
+  text-align: center;
+  display: block;
+}
+
+//////////////////////////////////////////////////////
+// Job Item                                         //
+//////////////////////////////////////////////////////
+
+.jobs-item{
+  display: flex;
+  margin-bottom: $spacing*3;
+  position: relative;
+}
+
+.jobs-item-content{
+  flex-grow: 1;
+}
+
+.jobs-item-company{
+  text-transform: uppercase;
+  font-size: $medium-font;
+}
+
+.jobs-item-thumbnail{
+  display: block;
+  margin-left: $spacing*2;
+  order: 2;
+  img{
+    width: 100px;
+    display: block;
+  }
+}
+
+.jobs-item-title{
+  font-size: $larger-font;
+  @include font-bold;
+  a{
+    color: $text;
+    &:hover{
+      color: $orangered;
+      text-decoration: underline;
+    }
+  }
+  @include small{
+    font-size: $large-font;
+  } 
+}
+
+.jobs-item-body{
+  font-size: $medium-font;
+  @include body-font;
+  font-weight: $light;
+  p, .modal-trigger{
+    display: inline;
+  }
+}
+
+.buy-job-button{
+  margin-top: $spacing;
+}
+
+//////////////////////////////////////////////////////
+// Other                                            //
+//////////////////////////////////////////////////////
+
+.submit-job-link{
+  position: absolute;
+  bottom: 35px;
+  right: 0px;
+  font-size: $small-font;
+  text-align: right;
+  @include font-regular;
+}
+
+.jobs-new-form-notice{
+  font-size: $medium-font;
+  padding: $spacing;
+  border: 5px solid $lightergrey;
+  background-color: $lightestgrey;
+}

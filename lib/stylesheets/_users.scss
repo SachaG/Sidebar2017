@@ -1,0 +1,49 @@
+
+//////////////////////////////////////////////////////
+// Profile Page                                     //
+//////////////////////////////////////////////////////
+
+.users-profile .page-title{
+  font-size: 4rem;
+  margin-bottom: -18px;
+}
+
+.users-profile-twitter{
+  position: absolute;
+  top: 25px;
+  right: 0px;
+  font-size: $larger-font;
+  color: $lightergrey;
+  &:hover{
+    color: $active-color;
+  }
+}
+.user-posts{
+  z-index: 10;
+  position: relative;
+}
+
+.user-posts-header{
+  background: $white;
+  padding: $spacing;
+  margin-bottom: 0;
+  @include flex-center;
+  justify-content: center;
+  padding: $spacing 0;
+  a, button, span{
+    padding: 3px 0;
+    display: block;
+    font-size: $larger-font;
+    margin-right: $spacing*2;
+    &:last-child{
+      margin-right: 0;
+    }
+    &.active{
+      border-bottom: 3px solid $active-color;
+    }
+  }
+}
+
+//////////////////////////////////////////////////////
+// Account Page                                     //
+//////////////////////////////////////////////////////

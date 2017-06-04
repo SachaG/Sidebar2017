@@ -1,0 +1,21 @@
+.page-title, .posts-list-title{
+  @include font-bold;
+  font-size: 4.9rem;
+  color: $lightertext;
+  margin-bottom: -25px;
+  white-space: nowrap;
+  position: relative;
+}
+
+.page-contents, .posts-list-content{
+  background: white;
+  padding: $spacing*2;
+  border-top: 5px solid $orangered;
+  margin-bottom: $spacing*2;
+  position: relative;
+  z-index: 10;
+  @include small{
+    padding: $spacing;
+    overflow-x: hidden;
+  }
+}

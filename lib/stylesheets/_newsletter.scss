@@ -1,0 +1,100 @@
+
+//////////////////////////////////////////////////////
+// Newsletter                                       //
+//////////////////////////////////////////////////////
+
+// .newsletter-wrapper{
+//   z-index: 3;
+//   position: fixed;
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   right: 0;
+// }
+
+.newsletter-wrapper{
+  // padding-bottom: $spacing*3;
+  // border-bottom: 2px solid $lightergrey;
+  margin-bottom: $spacing*3;
+  @include small{
+    margin: $spacing;
+  }
+}
+
+.newsletter{
+  position: relative;
+  background: $lightblue;
+  // background-image: url('/img/sidebar-pattern.svg');
+  a.newsletter-close{
+    position: absolute;
+    top: 50%;
+    margin-top: -12px;
+    right: 10px;
+    color: $deepblue;
+  }
+  @include medium-large{
+    width: calc(100% + #{$spacing*6});
+    left: -$spacing*3;
+    padding: $spacing*2;
+  }
+  @include small{
+    padding: $spacing;
+  }
+}
+.newsletter-form-wrapper, .newsletter-form{
+  @include medium-large{
+    @include flex-center;
+    justify-content: center;
+  }
+  @include small{
+    text-align: center;
+  }
+  .form-control{
+    margin-right: $spacing/2;
+    border: 0;
+    background-color : rgba(255,255,255,0.6);
+    transition: background-color 300ms ease-in;
+    &:focus{
+      background-color : white;
+    }
+  }
+}
+.newsletter-tagline{
+  margin: 0 $spacing/2 0 0;
+  font-size: $large-font;
+  @include small{
+    margin: 0 0 $spacing/2 0;
+  }
+}
+
+.newsletter-button{
+  background: $deepblue;
+  border-color: $deepblue;
+}
+
+
+// .newsletter-message{
+//   text-align: center;
+//   margin-top: $vmargin*1.5;
+//   &.error{
+//     color: $red;
+//   }
+// }
+
+// .newsletter-success{
+//   text-align: center;
+//   font-size: $large-font;
+// }
+
+// .newsletter-loading{
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   height: 100%;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   z-index: 10;
+//   background: rgba($lightblue, 0.85);
+// }

@@ -1,0 +1,18 @@
+.footer{
+  font-size: $medium-font;
+  margin: $spacing*3 0;
+  padding: 0 $spacing;
+  text-align: center;
+  .footer-link{
+    display: inline-block;
+    margin-right: $spacing/2;
+    &:after{
+      content: "|";
+      display: inline-block;
+      margin-left: $spacing/2;
+    }
+    &:last-child{
+      margin-right: 0;
+    }
+  }
+}

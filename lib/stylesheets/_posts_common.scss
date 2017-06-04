@@ -1,0 +1,382 @@
+//////////////////////////////////////////////////////
+// Posts Item                                       //
+//////////////////////////////////////////////////////
+
+.posts-item{
+  position: relative;
+  padding: 0;
+  &.posts-sticky{
+    background: $light-yellow;
+  }
+  .posts-list &.posts-pending{
+    background: $lightestgrey;
+    &>*{
+      opacity: 0.4;
+    }
+    &:hover>*{
+      opacity: 1;
+    }
+  }
+}
+
+//////////////////////////////////////////////////////
+// Posts Thumbnail                                 //
+//////////////////////////////////////////////////////
+
+
+.posts-thumbnail{
+  // -webkit-filter: url(#blue-tint);
+  // .posts-item:hover &{
+  //   -webkit-filter: none;
+  // }
+  // border: 2px solid $blue;
+  &:hover{
+    border-color: $active-color;
+  }
+  span{
+    display: block;
+    // background-color: #E0EEF5;
+    background: linear-gradient(to bottom, rgba($lightblue,0) 0%,rgba($lightblue,1) 100%);
+    position: relative;
+    img{
+      display: block;
+      // mix-blend-mode: luminosity;
+      mix-blend-mode: multiply;
+      -webkit-filter: saturate(0.5);
+      filter: saturate(0.5);
+      // opacity: 0;
+    }
+    &:after{
+      display: block;
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      // opacity: 0.3;
+      // mix-blend-mode: color-dodge;
+      mix-blend-mode: color;
+    }
+    // &:after{
+    //   display: block;
+    //   content: '';
+    //   position: absolute;
+    //   width: 100%;
+    //   height: 100%;
+    //   top: 0;
+    //   left: 0;
+    //   mix-blend-mode: hue;
+    //   mix-blend-mode: soft-light;
+    //   -webkit-filter: brightness(3.5);
+    //   filter: brightness(3.5);
+    // }
+  }
+  &.v1 span:after{
+    background: 
+      linear-gradient(135deg, rgba($orangered,0.4) 0%, rgba($orangered,0) 50%, rgba($orangered,0) 100%),
+      linear-gradient(25deg, rgba($deepblue,0) 0%, rgba($deepblue,0) 50%, rgba($deepblue,0.4) 100%),
+      linear-gradient(transparent 5%, rgba($pink,0.1) 100%);
+  }
+  &.v2 span:after{
+    background: 
+      linear-gradient(225deg, rgba($orangered,0.4) 0%, rgba($orangered,0) 50%, rgba($orangered,0) 100%),
+      linear-gradient(45deg, rgba($deepblue,0) 0%, rgba($deepblue,0) 50%, rgba($deepblue,0.4) 100%),
+      linear-gradient(transparent 5%, rgba($pink,0.2) 100%);
+  }
+  &.v3 span:after{
+    background: 
+      linear-gradient(190deg, rgba($orangered,0.4) 0%, rgba($orangered,0) 50%, rgba($orangered,0) 100%),
+      linear-gradient(55deg, rgba($deepblue,0) 0%, rgba($deepblue,0) 50%, rgba($deepblue,0.4) 100%),
+      linear-gradient(transparent 5%, rgba($pink,0.1) 100%);    
+  }
+  &.v4 span:after{
+    background: 
+      linear-gradient(165deg, rgba($orangered,0.4) 0%, rgba($orangered,0) 50%, rgba($orangered,0) 100%),
+      linear-gradient(15deg, rgba($deepblue,0) 0%, rgba($deepblue,0) 50%, rgba($deepblue,0.4) 100%),
+      linear-gradient(transparent 5%, rgba($pink,0.2) 100%);    
+  }
+}
+
+//////////////////////////////////////////////////////
+// Posts Title                                      //
+//////////////////////////////////////////////////////
+
+.posts-item-title-wrapper{
+  flex-grow: 1;
+  margin-bottom: $vmargin/2;
+}
+
+.posts-item-title{
+  line-height: 1.25;
+  display: inline;
+  @include font-bold;
+  @include small{
+    font-size: $smallish-font;
+  }
+  @include medium{
+    font-size: $medium-font;
+  }
+  @include large{
+    font-size: $large-font;
+  }
+  margin-bottom: 5px;
+  .posts-item-title-link{
+    color: $text;
+    &, &:active, &:hover{
+      text-decoration: none;
+    }
+    &:hover{
+      color: $deepblue;
+    }
+  }
+}
+
+.posts-sponsored-marker{
+  display: inline-block;
+  margin-left: 3px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: $smallest-font;
+  background: $light-yellow;
+  color: $darkestbeige;
+  padding: 4px 6px;
+  font-weight: $light;
+  vertical-align: middle;
+  // border: 1px solid $medium-yellow;
+  &:hover{
+    text-decoration: none;
+    color: inherit;
+  }
+}
+
+.posts-item-domain{
+  color: $lighttext;
+  font-size: $small-font;
+  display: inline;
+  font-weight: $medium;
+}
+
+//////////////////////////////////////////////////////
+// Posts Excerpt (not used)                         //
+//////////////////////////////////////////////////////
+
+.posts-item-excerpt{
+  display: none;
+  // border-left: 3px $beige solid;
+  // margin-left: $hmargin/2;
+  // padding-left: $hmargin;
+  padding-bottom: $vmargin;
+  border-bottom: 3px $beige solid;
+  margin-bottom: $vmargin*2;
+  font-style: italic;
+  color: $mediumgrey;
+  font-size: $medium-font;
+
+  position: relative;
+  &:after, &:before {
+    top: 100%;
+    left: 6.5%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+  }
+
+  &:after {
+    border-color: rgba(255, 255, 255, 0);
+    border-top-color: #ffffff;
+    border-width: 10px;
+    margin-left: -10px;
+  }
+  &:before {
+    border-color: rgba(239, 234, 232, 0);
+    border-top-color: #EFEAE8;
+    border-width: 14px;
+    margin-left: -14px;
+  }
+}
+
+//////////////////////////////////////////////////////
+// Posts Meta                                       //
+//////////////////////////////////////////////////////
+
+.posts-item-meta{
+  @include flex-center;
+  font-size: $small-font;
+  .like{
+    margin-right: $hmargin * 1.5;
+  }
+  .posts-item-user{
+    margin-right: $hmargin * 1.5;
+    a{
+      display: block;
+    }
+  }
+  svg{
+    display: block;
+  }
+}
+
+// .posts-item-user{
+//   @include flex-center;
+
+//   a{
+//     color: $lighttext;
+//   }
+// }
+
+
+
+.posts-actions{
+
+  @include flex-center;
+  .modal-trigger{
+    display: inline-block;
+    // margin-right: $hmargin;
+  }
+  .icon{
+    color: $lighttext;
+  }
+}
+
+.posts-item-admin-actions{
+  white-space: nowrap;
+  a{
+    display: inline-block;
+  }
+}
+
+.posts-actions, .posts-stats{
+  border: 1px solid $beige;
+  @include border-radius;
+}
+.posts-actions a, .posts-stats-item{
+  display: inline-block;
+  border-right: 1px solid $beige;
+  padding: 2px 4px;
+  color: $lighttext;
+}
+//////////////////////////////////////////////////////
+// Categories                                       //
+//////////////////////////////////////////////////////
+
+.posts-category{
+  background: $lightbeige;
+  color: $darkerbeige;
+  border: none;
+  display: inline-block;
+  font-size: $small-font;
+  @include border-radius;
+  margin-right: 5px;
+  padding: 2px 6px;
+  @include activeHover;
+  white-space: nowrap;
+}
+
+//////////////////////////////////////////////////////
+// Like (Upvote)                                    //
+//////////////////////////////////////////////////////
+
+.like{
+  .like-button{
+    display: block;
+  }
+  .like-icon{
+    display: block;
+    path{
+      fill: $lightgrey;
+    }
+  }
+  .liked-icon{
+    display: none;
+    path{
+      fill: $pink;
+    }
+  }
+  a:hover{
+    text-decoration: none;
+    .icon{
+      color: $active-color;
+    }
+  }
+  &.voted {
+    .like-icon{
+      display: none;
+    }
+    .liked-icon{
+      display: block;
+    }
+  }
+}
+
+//////////////////////////////////////////////////////
+// Share                                            //
+//////////////////////////////////////////////////////
+
+.posts-item-share{
+  position: relative;
+}
+
+.posts-item-share-icon{
+  path{
+    fill: $lightgrey;
+  }
+  display: block;
+  &:hover{
+    color: $orangered;
+  }
+}
+.posts-item-share-options{
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  z-index: 100;
+  top: -40px;
+  left: -37px;
+  padding: 5px;
+  background: black(0.75);
+  border-radius: 3px;
+  box-shadow: 0 3px 7px black(0.15);
+  @include flex-center;
+  justify-content: center;
+  transition: all 300ms ease-in-out;
+  a{
+    color: $white;
+    padding: 5px;
+    &:hover{
+      color: $orangered;
+    }
+  }
+  &:after {
+    top: 100%;
+    left: 50%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-color: black(0);
+    border-top-color: black(0.75);
+    border-width: 10px;
+    margin-left: -10px;
+  }
+  &.show{
+    opacity: 1;
+    pointer-events: auto;
+    top: -55px;
+  }
+}
+
+//////////////////////////////////////////////////////
+// Posts Edit Form                                  //
+//////////////////////////////////////////////////////
+
+.posts-edit-form-admin{
+  @include flex-center;
+  justify-content: space-between;
+}
+
